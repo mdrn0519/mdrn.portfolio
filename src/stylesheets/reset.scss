@@ -1,0 +1,76 @@
+* {
+	box-sizing: border-box;
+	border: 0;
+	font: inherit;
+	letter-spacing: 0.05em;
+	vertical-align: baseline;
+	padding: 0;
+	margin: 0;
+
+	&:forcus {
+		outline: 0;
+	}
+}
+
+html, body {
+	width: 100%;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.4rem;	
+	font-family: 'Roboto', 'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+	line-height: 1;
+
+	@media screen and (min-width: 768px) {
+		font-size: 1.6rem;	
+	}
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+
+	&:before, &:after {
+		content: '';
+		content: none;
+	}
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button {
+	color: inherit;
+	text-align: left;
+	background-color: transparent;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	appearance: none;
+}
+
+a {
+	color: inherit;
+  text-decoration: none;
+
+  &:visited,
+  &:active,
+  &:hover {
+    opacity: 1;
+    color: inherit;
+  }
+}
