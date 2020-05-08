@@ -27,7 +27,7 @@ class App extends React.Component {
   // 初回の再レンダーを防ぐ
   shouldComponentUpdate(nextProps, nextState) {
     if (this.state.isVisibleSection !== nextState.isVisibleSection) {
-        return true;
+      return true;
     }
     return false;
   }
@@ -52,7 +52,7 @@ class App extends React.Component {
 
     const toggleDisplay = entries => {
       entries.forEach(entry => {
-        const isVisible = entry.isIntersecting
+        const isVisible = entry.intersectionRatio > 0.5 ? true : false
         const sectionIndex = this.sectionTitles.indexOf(entry.target.dataset.sectionName)
 
         if (isVisible) {
