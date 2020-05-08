@@ -74,6 +74,20 @@ class App extends React.Component {
     lazyVisibles.forEach(el => {obserber.observe(el)})
   }
 
+  adjustHight() {
+    const resize = entries => {
+      for (let entry of entries) {
+        const sectionWrapper = entry.target.querySelector('.section-wrapper')
+        
+        sectionWrapper.style.height = window.innerHeight + 'px';
+      }
+    }
+
+    const resizeObserver = new ResizeObserver(resize);
+
+    resizeObserver.observe(document.body);
+  }
+
   render() {
     return (
       <div id="section-wrapper" className="section-wrapper">
@@ -104,7 +118,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.obserber();
+    this.obserber()
+    this.adjustHight()
   }
 }
 
