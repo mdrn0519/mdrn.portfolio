@@ -36,7 +36,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^2.2.0",
+    "resize-observer-polyfill": "^1.5.1"
   },
   "homepage": "http://mdrn0519.work/"
 }

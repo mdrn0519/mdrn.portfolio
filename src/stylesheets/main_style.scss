@@ -14,7 +14,7 @@
   }
 
   .background {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -23,7 +23,6 @@
     top: 0;
     left: 0;
     transition: all .6s;
-    // z-index: -1;
 
     &:before {
       content: "";
@@ -45,7 +44,7 @@
   }
 
   section {
-    height: 100vh;
+    height: 100%;
     padding: 0 1.5rem;
     position: relative;
     scroll-snap-align: start;
@@ -116,6 +115,7 @@
 
   .letter {
     line-height: 1.6;
+    text-align: justify;
   }
 
   .btn {

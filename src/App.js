@@ -1,4 +1,5 @@
 import React from 'react';
+import ResizeObserver from 'resize-observer-polyfill';
 
 import './stylesheets/main_style.scss';
 import main_bg from './images/main_bg_front.png';
@@ -24,7 +25,7 @@ class App extends React.Component {
   }
 
   // 初回の再レンダーを防ぐ
-  shouldComponentUpdate(nextProps: Props, nextState: State) {
+  shouldComponentUpdate(nextProps, nextState) {
     if (this.state.isVisibleSection !== nextState.isVisibleSection) {
         return true;
     }
@@ -74,6 +75,20 @@ class App extends React.Component {
     lazyVisibles.forEach(el => {obserber.observe(el)})
   }
 
+  adjustHight() {
+    const resize = entries => {
+      for (let entry of entries) {
+        const sectionWrapper = entry.target.querySelector('.section-wrapper')
+
+        sectionWrapper.style.height = window.innerHeight + 'px';
+      }
+    }
+
+    const resizeObserver = new ResizeObserver(resize);
+
+    resizeObserver.observe(document.body);
+  }
+
   render() {
     return (
       <div id="section-wrapper" className="section-wrapper">
@@ -83,8 +98,7 @@ class App extends React.Component {
         <div
           className={this.state.isVisibleSection === "Intro" ? "background" : "background scaleUp"}
           style={{backgroundImage: `url(${main_bg})`}}
-        >
-        </div>
+        />
         
         <Intro />
         <Profiles />
@@ -104,7 +118,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.obserber();
+    this.obserber()
+    this.adjustHight()
   }
 }
 
