@@ -29,6 +29,7 @@ class App extends React.Component {
     if (this.state.isVisibleSection !== nextState.isVisibleSection) {
       return true;
     }
+
     return false;
   }
 
