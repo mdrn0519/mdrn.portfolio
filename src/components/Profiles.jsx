@@ -2,7 +2,6 @@ import React from 'react';
 import img from '../images/profile_image.jpg';
 
 class Profiles extends React.Component {
-
   constructor(props) {
     super(props)
 
